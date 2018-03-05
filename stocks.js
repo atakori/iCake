@@ -5,7 +5,7 @@ function getMaxProfit(stockPrices) {
     // calculate the max profit
 
     //O(n2) solution
-    let maxProfit;
+/*    let maxProfit;
     for(let i=0; i<stockPrices.length;i++) {
   
         for(let j=i+1;j<stockPrices.length; j++) {
@@ -14,6 +14,26 @@ function getMaxProfit(stockPrices) {
             	maxProfit = difference;   
             }
         }
+    }
+    return maxProfit;*/
+
+    //O(n) Solution
+    if(stockPrices.length <2) {
+    	throw new Error('Getting Profit requires at least 2 values')
+    }
+    let minPrice= stockPrices[0];
+    let maxProfit;
+
+    for(let i=0; i<stockPrices.length; i++) {
+    	let currentPrice= stockPrices[i];
+
+    	if(maxProfit === undefined) {
+    		maxProfit= stockPrices[1] - stockPrices[0];
+    	} else {
+    	minPrice= Math.min(minPrice, currentPrice);
+    	let potentialProfit= currentPrice - minPrice;
+    	maxProfit= Math.max(potentialProfit, maxProfit);
+    }
     }
     return maxProfit;
 }
