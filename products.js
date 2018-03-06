@@ -2,7 +2,7 @@
 //an array of the product for every other num besides
 //the one you are on
 
-function findProducts(array) {
+/*function findProducts(array) {
 	//O(n) Solution
 	let multiplier= array.reduce((total, currentNum) => {
   	return total* currentNum;
@@ -12,11 +12,11 @@ function findProducts(array) {
   })
   	console.log(allProducts);
     return allProducts;
-}
+}*/
 
 //attempting without division
 
-function findProducts(arr) {
+/*function findProducts(arr) {
 	//O(n2) Solution
 	let results= [];
 	//run nested loops to multiply each num with
@@ -36,6 +36,32 @@ function findProducts(arr) {
 		results.push(total);
 	}
 	return results;
+}*/
+
+//Attempt #3 using greedy method
+
+function findProducts(arr) {
+	if(arr.length <2) {
+		throw new Error('requires at least 2 numbers to get the product of all nums')
+	}
+
+	const productsOfNumsExceptIndex= [];
+
+	let productsToNow= 1;
+
+	for(let i=0; i<arr.length;i++){
+		productsOfNumsExceptIndex[i]= productsToNow;
+		productsToNow *= arr[i]
+	}
+
+
+	productsToNow=1;
+	for(let j=arr.length-1; j>=0; j--){
+		productsOfNumsExceptIndex[j] *= productsToNow;
+		productsToNow *= arr[j]
+	}
+	return productsOfNumsExceptIndex;
 }
+
 
 module.exports= findProducts;
