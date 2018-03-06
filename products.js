@@ -17,15 +17,16 @@ function findProducts(array) {
 //attempting without division
 
 function findProducts(arr) {
+	//O(n2) Solution
 	let results= [];
 	//run nested loops to multiply each num with
 	//all the other nums
 	for(let i=0; i<arr.length; i++) {
 		let total= 1;
-		for(let j=0;i<arr.length;j++) {
+		for(let j=0;j<arr.length;j++) {
 			let currentValue= arr[j];
 			//if the outerIndex matches the innerIndex
-			//do not mult by num
+			//do not multiplier by num
 			if(j === i) {
 				total= total *1;
 			} else {
@@ -36,3 +37,5 @@ function findProducts(arr) {
 	}
 	return results;
 }
+
+module.exports= findProducts;

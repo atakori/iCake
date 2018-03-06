@@ -1,0 +1,23 @@
+{
+  "name": "icake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "products.js",
+  "dependencies": {
+    "jest": "^22.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atakori/iCake.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atakori/iCake/issues"
+  },
+  "homepage": "https://github.com/atakori/iCake#readme"
+}
