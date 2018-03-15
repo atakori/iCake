@@ -25,4 +25,4 @@ function makingChange(amountLeft, denominations, currentIndex) {
 	return numPossibilities;
 }
 
-console.log(makingChange(4, [1,2,3]))
+module.exports= makingChange;
