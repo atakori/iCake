@@ -38,13 +38,6 @@ function findRectangularOverlap(rectangle1, rectangle2) {
 	};
 }
 
-console.log(findRectangularOverlap(rec1,rec2))
-
-
-
-
-
-
 //helper function to find the two rectangles x overlap
 /*unction findXOverlap(x1, width1, x2, width2) {
 	let highestStartPoint= Math.max(x1,x2);
