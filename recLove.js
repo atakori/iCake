@@ -1,5 +1,6 @@
 //same function so generalizing function names
-function findRangeOverlap(point1, length1, x2, width2) {
+
+function findRangeOverlap(point1, length1, point2, length2) {
 	let highestStartPoint= Math.max(point1, point2);
 	let lowestEndPoint= Math.min((point1 + length1), (point2 + length2));
 
@@ -9,9 +10,9 @@ function findRangeOverlap(point1, length1, x2, width2) {
 		return {startPoint: null, endPoint: null}
 	}
 
-	let overlapWidth: lowestEndPoint - highestStart;
+	let overlapLength= lowestEndPoint - highestStartPoint;
 
-	return {startPointX: highestStartPoint, overLapLength: overlapLength}
+	return {startPoint: highestStartPoint, overLapLength: overlapLength}
 }
 
 function findRectangularOverlap(rectangle1, rectangle2) {
@@ -30,12 +31,14 @@ function findRectangularOverlap(rectangle1, rectangle2) {
 	}
 
 	return {
-		leftX: xOverlap.startPointX,
-		bottomY: yOverlap.startPointY,
-		width:  xOverlap.overlapLength,
-		height: yOverlap.overlapLength
+		leftX: xOverlap.startPoint,
+		bottomY: yOverlap.startPoint,
+		width:  xOverlap.overLapLength,
+		height: yOverlap.overLapLength
 	};
 }
+
+console.log(findRectangularOverlap(rec1,rec2))
 
 
 
@@ -71,5 +74,8 @@ function findYOverlap(y1, height1, y2, height2) {
 	return {startPointY: highestStartPoint, height: overlapHeight}
 }
 */
-
+module.exports= {
+	findRectangularOverlap, 
+	findRangeOverlap
+}
 
